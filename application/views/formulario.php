@@ -51,7 +51,7 @@
                     <?php echo validation_errors(); ?>
                     <?= isset($msg) ?$msg: '' ?>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id=" ">
+                        <span class="input-group-text" >
                             <i class="bi bi-person-fill"></i>
                         </span>
                         <input  name="txtdni" type="text" class="form-control p-4" placeholder="Ingresar DNI" aria-label=" " aria-describedby=" ">
