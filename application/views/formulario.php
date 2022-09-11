@@ -15,17 +15,8 @@
 <div class="container">
   <h2>AQUI VA LO QUE ESTA EN EL MENU Y TODO ESO</h2>
   <p>Modal</p>
-        <script>
-            var isClicked = false;
-            var clickCounter = 100;
-            function fnTrackClick(){
-            if(isClicked){
-                clickCounter--;
-                setTimeout(clickCounter * 100, fnTrackClick);
-            }
-            }
-        </script>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrarse" onmousedown="isClicked=true;" onmouseover="fnTrackClick();" onmouseup="isClicked = false;">
+       
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrarse"">
             Abrir
         </button>
        
@@ -36,7 +27,8 @@
             <?php endforeach; ?>
         </ul>
   <!-- The Modal -->
-  <div class="modal fade" id="registrarse">
+  <!-- <div class="modal fade" id="registrarse"> -->
+  <div class="" id="registrarse">
     <div class="modal-dialog">
       <div class="modal-content">
             <!-- Modal Header -->
@@ -46,7 +38,7 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <form  action="Persona/create" method="POST" >
+                
                     <?php echo form_open('Persona/create',array('method'=>'POST')); ?>
                     <?php echo validation_errors(); ?>
                     <?= isset($msg) ?$msg: '' ?>
@@ -58,7 +50,7 @@
                     </div>
                         <!-- echo form_label('Nombre de usuario'); -->
                         <!-- echo form_input(array('type'=>'text','name'=>'username','class'=>'input-group-text')); -->
-                    <!-- <div class="mb-3">
+                    <div class="mb-3">
                         <label for="txtNombre" class="form-label"><strong>* Nombre:</strong></label>
                         <input name="txtNombre" type="text" class="form-control" id="txtNombre"  placeholder="Ingresar Nombre" aria-describedby="" >
                     </div>
@@ -81,13 +73,25 @@
                     <div class="mb-3">
                         <label for="fecha" class="form-label"><strong>* Fecha Nacimiento</strong></label>
                         <input name="fecha" type="date" class="form-control" id="fecha">
-                    </div> -->
+                    </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" >Aceptar</button>
-                        <button type="reset" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
+                        
                     </div>
                         <?php echo form_close(); ?>
-                </form>
+                       
+                        <?php foreach($menu as $item[0]): ?>
+                        
+                            <a href="<?=$item['url']?>">
+                                <button  class="btn btn-outline-secondary" data-dismiss="modal">
+                                    <?=$item['title'] ?>
+                                </button>
+                            </a>
+                        
+                        <?php endforeach; ?>
+
+                       
+                
             </div>
       </div>
     </div>
