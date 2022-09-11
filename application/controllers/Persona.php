@@ -173,16 +173,11 @@ class Persona extends CI_Controller {
              array(
                 'field' => 'fecha',
                 'label' => 'Fecha',
-                'rules' => 'required|valid_date[02/10/2002]',
+                'rules' => 'required',
                 'errors' => array(
                     'required'=>'
                     <div class="alert alert-warning" role="alert">
                         Rellene el espacio de FECHA DE NACIMIENTO
-                    </div>
-                    ',
-                    'valid_date'=>'
-                    <div class="alert alert-danger" role="alert">
-                       Ingrese una fecha valida
                     </div>
                     ',
                 ),
