@@ -61,7 +61,7 @@ class Persona extends CI_Controller {
              array(
                 'field' => 'txtNombre',
                 'label' => 'Nombre',
-                'rules' => 'required|max_length[25]|min_length[3]|alpha_space',
+                'rules' => 'required|max_length[25]|min_length[3]',
                 'errors'=>array(
                     'required'=>'
                     <div class="alert alert-warning" role="alert">
@@ -78,17 +78,13 @@ class Persona extends CI_Controller {
                        Ingrese almenos un  nombre
                     </div>
                     ',
-                    'alpha_space'=>'
-                    <div class="alert alert-danger" role="alert">
-                       Los carateres de Nombre solo deben de tener letras
-                    </div>
-                    ',
+                    
                 ),
             ),
             array(
                 'field' => 'txtApellido',
                 'label' => 'Apellido',
-                'rules' => 'required|max_length[25]|min_length[3]|alpha_space',
+                'rules' => 'required|max_length[25]|min_length[3]',
                 'errors'=>array(
                     'required'=>'
                     <div class="alert alert-warning" role="alert">
@@ -104,18 +100,13 @@ class Persona extends CI_Controller {
                     <div class="alert alert-danger" role="alert">
                        Ingrese almenos un  apellido
                     </div>
-                    ',
-                    'alpha_space'=>'
-                    <div class="alert alert-danger" role="alert">
-                       Los carateres de Apellido solo deben de tener letras
-                    </div>
-                    ',
+                    '
                 ),
             ),
             array(
                 'field' => 'txtDireccion',
                 'label' => 'Direccion',
-                'rules' => 'required|max_length[55]|min_length[6]|alpha_space',
+                'rules' => 'required|max_length[55]|min_length[6]',
                 'errors'=>array(
                     'required'=>'
                     <div class="alert alert-warning" role="alert">
@@ -131,12 +122,7 @@ class Persona extends CI_Controller {
                     <div class="alert alert-danger" role="alert">
                        Ingrese solo su Pais
                     </div>
-                    ',
-                    'alpha_space'=>'
-                    <div class="alert alert-danger" role="alert">
-                       Los carateres de Direccion solo deben de tener letras
-                    </div>
-                    ',
+                    '
                 ),
             ),
             array(
